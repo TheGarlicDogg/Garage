@@ -14,7 +14,7 @@ public class Raycast : MonoBehaviour
         if (Physics.Raycast(cam.position, cam.forward, out RaycastHit hitInfo, 5f, layerMask))
         {
             //Debug.Log("draw outline");
-            if (hitInfo.collider.gameObject != currentItem && currentItem != null) // Вызывается когда переводится курсор с одного предмета сразу на другой
+            if (hitInfo.collider.gameObject != currentItem && currentItem != null) // Р’С‹Р·С‹РІР°РµС‚СЃСЏ РєРѕРіРґР° РїРµСЂРµРІРѕРґРёС‚СЃСЏ РєСѓСЂСЃРѕСЂ СЃ РѕРґРЅРѕРіРѕ РїСЂРµРґРјРµС‚Р° СЃСЂР°Р·Сѓ РЅР° РґСЂСѓРіРѕР№
             {
                 stopOutline();
             }
