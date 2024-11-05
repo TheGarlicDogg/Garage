@@ -16,22 +16,22 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        scoreText.text = "Положите вещи в кузов пикапа (" + score.ToString() + "/9)";
+        scoreText.text = "РџРѕР»РѕР¶РёС‚Рµ РІРµС‰Рё РІ РєСѓР·РѕРІ РїРёРєР°РїР° (" + score.ToString() + "/9)";
     }
 
     public void AddScore()
     {
         score += 1;
-        scoreText.text = "Положите вещи в кузов пикапа (" + score.ToString() + "/9)";
+        scoreText.text = "РџРѕР»РѕР¶РёС‚Рµ РІРµС‰Рё РІ РєСѓР·РѕРІ РїРёРєР°РїР° (" + score.ToString() + "/9)";
         if (score == winScore)
         {
-            scoreText.text = "Вы победили!";
+            scoreText.text = "Р’С‹ РїРѕР±РµРґРёР»Рё!!";
         }
     }
     public void DecreaseScore()
     {
         score -= 1;
-        scoreText.text = "Положите вещи в кузов пикапа (" + score.ToString() + "/9)";
+        scoreText.text = "РџРѕР»РѕР¶РёС‚Рµ РІРµС‰Рё РІ РєСѓР·РѕРІ РїРёРєР°РїР° (" + score.ToString() + "/9)";
 
     }
 }
