@@ -25,7 +25,7 @@ public class ScoreManager : MonoBehaviour
         scoreText.text = "Положите вещи в кузов пикапа (" + score.ToString() + "/9)";
         if (score == winScore)
         {
-            scoreText.text = "Вы победили!!";
+            scoreText.text = "Вы победили!";
         }
     }
     public void DecreaseScore()
