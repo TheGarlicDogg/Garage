@@ -37,14 +37,6 @@ public class PickUpScript : MonoBehaviour
                     }
                 }
             }
-            else
-            {
-                if (canDrop == true)
-                {
-                    StopClipping(); 
-                    DropObject();
-                }
-            }
         }
         if (heldObj != null) 
         {
@@ -70,15 +62,6 @@ public class PickUpScript : MonoBehaviour
             Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), GetComponent<Collider>(), true);
         }
     }
-    void DropObject()
-    {
-
-        Physics.IgnoreCollision(heldObj.GetComponent<Collider>(), GetComponent<Collider>(), false);
-        heldObj.layer = 3; 
-        heldObjRb.isKinematic = false;
-        heldObj.transform.parent = null; 
-        heldObj = null; 
-    }
     void MoveObject()
     {
         heldObj.transform.position = holdPos.transform.position;
@@ -89,12 +72,12 @@ public class PickUpScript : MonoBehaviour
         heldObj.layer = 3;
         heldObjRb.isKinematic = false;
         heldObj.transform.parent = null;
-        heldObjRb.AddForce(cam.forward * throwForce);
+        heldObjRb.AddForce(cam.forward * throwForce, ForceMode.Impulse);
         heldObj = null;
     }
     void StopClipping() 
     {
-        var clipRange = Vector3.Distance(heldObj.transform.position, transform.position);
+        float clipRange = Vector3.Distance(heldObj.transform.position, transform.position);
 
         RaycastHit[] hits;
         hits = Physics.RaycastAll(cam.position, cam.forward, clipRange);
